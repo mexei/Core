@@ -1,0 +1,36 @@
+//============================================================================
+// Name        : MaxSiquens.cpp
+// Author      : RadoslavNikolov
+// Version     :
+// Copyright   : ThisIsTheTest
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <set>
+using namespace std;
+//Write a method that finds the longest subsequence
+//of equal numbers in given array. Use linked list.
+int main() {
+
+	multiset<int> arrea;
+	multiset<int>::iterator it;
+	int flag = 0;
+
+	do {
+		cout << "Enter sam number" << endl;
+		cin >> flag;
+		arrea.insert(flag);
+
+	} while (flag != 0);
+	int count = 0;
+	int per;
+	for (it = arrea.begin(); it != arrea.end(); it++) {
+		per = *it;
+		if (per == *it++) {
+			count++;
+		}
+	}
+	cout << count;
+	return 0;
+}
